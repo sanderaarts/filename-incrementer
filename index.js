@@ -13,7 +13,7 @@ module.exports = {
 };
 
 /**
- * Get files matching the pattern.
+ * Get file paths matching the pattern.
  * @param {string} pattern - Path to files, with '###' (or pattern described in `incr`) where the incrementer is set, e.g. '/path/filename-###.ext'
  * @param {string} [incr = '###'] - Incrementer pattern
  * returns {Promise<string[]>}
@@ -30,7 +30,7 @@ function getFiles(pattern, incr) {
 }
 
 /**
- * Get map of filenames matching the pattern and their incrementer value.
+ * Get map of paths matching the pattern and their incrementer value.
  * @param {string} pattern - Path to files, with '###' (or pattern described in `incr`) where the incrementer is set, e.g. '/path/filename-###.ext'
  * @param {string} [incr = '###'] - Incrementer pattern
  * returns {Promise<{[filename: string]: number}>}
@@ -87,7 +87,7 @@ function getNew(pattern, incr) {
 }
 
 /**
- * Get incremented filename.
+ * Get filename with incremented value.
  * @param {string} pattern - Path to files, with '###' (or pattern described in `incr`) where the incrementer is set, e.g. '/path/filename-###.ext'
  * @param {string} [incr = '###'] - Incrementer pattern
  * returns {Promise<string>}
@@ -104,7 +104,7 @@ function getNewName(pattern, incr) {
  * @param {string} type - Pattern type, one of 'glob'|'regexp'
  * @param {string} pattern - Path to files, with '###' (or pattern described in `incr`) where the incrementer is set, e.g. '/path/filename-###.ext'
  * @param {string} [incr = '###'] - Incrementer pattern
- * returns {Promise<number>}
+ * returns {Promise<string>}
  */
 function getMatchPattern(type, pattern, incr) {
 	const pathData = path.parse(pattern);
