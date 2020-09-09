@@ -3,24 +3,14 @@ const path = require('path');
 const incrPattern = '###';
 
 module.exports = {
-	get,
 	getFiles,
 	getFilesMap,
 	getMax,
 	getMin,
+	getNew,
+	getNewName,
 	getMatchPattern,
 };
-
-/**
- * Get incremented value for files matching the pattern.
- * @param {string} pattern - Path to files, with '###' (or pattern described in `incr`) where the incrementer is set, e.g. '/path/filename-###.ext'
- * @param {string} [incr = '###'] - Incrementer pattern
- * returns {Promise<number>}
- */
-function get(pattern, incr) {
-	return getMax(pattern, incr)
-		.then(max => max + 1);
-}
 
 /**
  * Get files matching the pattern.
@@ -83,6 +73,30 @@ function getMax(pattern, incr) {
 function getMin(pattern, incr) {
 	return getFilesMap(pattern, incr)
 		.then(map => Math.max(0, Math.min.apply(null, Object.values(map))));
+}
+
+/**
+ * Get incremented value for files matching the pattern.
+ * @param {string} pattern - Path to files, with '###' (or pattern described in `incr`) where the incrementer is set, e.g. '/path/filename-###.ext'
+ * @param {string} [incr = '###'] - Incrementer pattern
+ * returns {Promise<number>}
+ */
+function getNew(pattern, incr) {
+	return getMax(pattern, incr)
+		.then(max => max + 1);
+}
+
+/**
+ * Get incremented filename.
+ * @param {string} pattern - Path to files, with '###' (or pattern described in `incr`) where the incrementer is set, e.g. '/path/filename-###.ext'
+ * @param {string} [incr = '###'] - Incrementer pattern
+ * returns {Promise<string>}
+ */
+function getNewName(pattern, incr) {
+	const namePattern = path.basename(pattern);
+
+	return getNew(pattern, incr)
+		.then(value => namePattern.replace(incr || incrPattern, value));
 }
 
 /**
