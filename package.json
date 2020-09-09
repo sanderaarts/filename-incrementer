@@ -1,6 +1,6 @@
 {
   "name": "filename-incrementer",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Get filename incrementer",
   "main": "index.js",
   "scripts": {
