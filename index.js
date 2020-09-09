@@ -46,7 +46,7 @@ function getFilesMap(pattern, incr) {
 				const match = filename.match(regExp);
 
 				if (match) {
-					map[filename] = match[1];
+					map[filename] = Number(match[1]);
 				}
 			});
 			return map;
