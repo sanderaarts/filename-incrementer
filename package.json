@@ -1,7 +1,7 @@
 {
   "name": "filename-incrementer",
   "version": "2.0.0",
-  "description": "Get filename incrementer",
+  "description": "Increment filenames",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,10 +10,14 @@
     "type": "git",
     "url": "https://github.com/sanderaarts/filename-incrementer.git"
   },
+  "keywords": [
+    "filename",
+    "increment",
+    "incrementer"
+  ],
   "author": "Sander Aarts",
   "license": "MIT",
   "dependencies": {
     "glob": "^7.1.6"
-  },
-  "homepage": "https://github.com/sanderaarts/filename-incrementer"
+  }
 }
