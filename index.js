@@ -104,7 +104,7 @@ function getNewName(pattern, incr) {
  * @param {string} type - Pattern type, one of 'glob'|'regexp'
  * @param {string} pattern - Path to files, with '###' (or pattern described in `incr`) where the incrementer is set, e.g. '/path/filename-###.ext'
  * @param {string} [incr = '###'] - Incrementer pattern
- * returns {Promise<string>}
+ * returns {string}
  */
 function getMatchPattern(type, pattern, incr) {
 	const pathData = path.parse(pattern);

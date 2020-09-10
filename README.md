@@ -175,19 +175,21 @@ Get glob or regexp matching pattern.
 
 Signature:
 
-`getMatchPattern(type: 'glob'|'regexp', path: string, incrPattern: string = '###'): Promise<string>`
+`getMatchPattern(type: 'glob'|'regexp', path: string, incrPattern: string = '###'): string`
 
 Examples:
 
 ```javascript
-incr.getMatchPattern('glob', 'directory/file-###.ext')
-  .then(pattern => console.log(pattern));
+let ptrn1 = incr.getMatchPattern('glob', 'directory/file-###.ext');
+
+console.log(ptrn1);
 
 // logs: 'directory/file-+([0-9]).ext'
 
 
-incr.getMatchPattern('regexp', 'directory/test-@@.ext', '@@')
-  .then(pattern => console.log(pattern));
+let ptrn2 = incr.getMatchPattern('regexp', 'directory/test-@@.ext', '@@');
+
+console.log(ptrn2);
 
 // logs: '^directory/test\-([0-9]+)\.ext$'
 ```
