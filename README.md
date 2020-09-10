@@ -13,7 +13,7 @@ npm install filename-incrementer
 Example:
 
 ```javascript
-var incr = require('filename-incrementer');
+const incr = require('filename-incrementer');
 
 // Get filename with incremented value.
 incr.getNewName('path/filename-###.ext')
