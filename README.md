@@ -26,7 +26,7 @@ incr.getNewName('path/filename-###.ext')
 
 Almost all methods accept the two same parameters:
 * `{string} path` - Path to files, with '###' (or pattern described in `incrPattern`) where the incrementer is set, e.g. '/path/filename-###.ext'.
-* `{string} [incrPattern]` - If for one reason you want to use a different pattern than '###' to match the incrementer's place in the filename, you provide it here.
+* `{string} [incrPattern = '###']` - If for one reason you want to use a different pattern than '###' to match the incrementer's place in the filename, you provide it here.
 
 Exampels below assume the following file structure:
 
