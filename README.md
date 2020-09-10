@@ -41,7 +41,7 @@ directory
    |- test-3.ext
 ```
 
-The first two methods will probably be the most usefull ones:
+The first two methods will probably be the most useful ones:
 
 ### getNew
 
@@ -128,6 +128,10 @@ incr.getMin('directory/example-###.ext')
 
 // logs: 3
 ```
+
+<hr>
+
+The following methods are mostly for internal use, but may come in handy at some point:
 
 ### getFiles
 
